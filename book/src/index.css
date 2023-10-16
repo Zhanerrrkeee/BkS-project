@@ -8,6 +8,8 @@
 
 :root{
    --primary-color: #fb995d;
+   --primary-color-bright: #fa7727;
+   --whitesmoke-color:#F5F5F5;
 }
 
 h1,
@@ -37,3 +39,7 @@ h1{
 .align-center{ align-items: center; }
 
 .text-primary{ color: var(--primary-color); }
+
+span{
+   font-family: Open Sans;
+}

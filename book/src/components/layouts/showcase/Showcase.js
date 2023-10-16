@@ -1,6 +1,7 @@
 import React from "react";
 import './showcase.styles.css';
 import Navbar from "../navbar/Navbar";
+import SearchInputForm from "../../form/searchinputform/SearchInputForm";
 
 const Showcase=()=>{
     return(
@@ -8,9 +9,11 @@ const Showcase=()=>{
             <Navbar />
             <div className="overlay"></div>
             <div className="showcase-content">
-                <h1>Best Books Available </h1>
+                <h1>Best <span className="text-primary">Books</span> Available </h1>
                 <p>Buy quality books at cheaper price</p>
-            </div>
+           
+                <SearchInputForm/>            </div>
+
         </section>
     )
 }
