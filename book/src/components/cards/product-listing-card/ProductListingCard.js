@@ -1,9 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import './ProductListingCard.styles.css';
-import ProductImage from '../../../assets/books-images/dor.jpg'
+import ProductImage from '../../../assets/books-images/dor.jpg';
+import SearchInputForm from "../../form/searchinputform/SearchInputForm";
+import axios from 'axios';
 
-
-const ProductListingCard=()=>{
+const ProductListingCard=({book})=>{
+    console.log(book);
     return(
         <div className="listing-container">
                     <div className="product-listing-card">
