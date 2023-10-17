@@ -19,4 +19,4 @@ const AuthForm = () => {
     </form>
       )
 }
-export default authForm;
+export default AuthForm;

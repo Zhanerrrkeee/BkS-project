@@ -1,11 +1,13 @@
-import React, {useState} from "react";
+import React from "react";
 import './ProductListingCard.styles.css';
 import ProductImage from '../../../assets/books-images/dor.jpg';
 import SearchInputForm from "../../form/searchinputform/SearchInputForm";
-import axios from 'axios';
+import { BookData } from "../../../mockData";
+import { Link } from "react-router-dom";
 
-const ProductListingCard=({book})=>{
-    console.log(book);
+
+const ProductListingCard=({bookData})=>{
+    console.log(bookData);
     return(
         <div className="listing-container">
                     <div className="product-listing-card">
@@ -13,10 +15,12 @@ const ProductListingCard=({book})=>{
                             <img src={ProductImage} alt="product-listing-img" className="product-listing-img" /> 
                         </div>
                         <div className="product-listing-details-container">
-                            <h3> Портрет Дориана Грея </h3>
-                            <p className="author-name">Oскар Уайльд</p>
-                            <p className="pricing"> 1900 &#8376;</p>
-                            <a href="a" className="product-listing-button"> Button </a>
+                            <h3>{bookData.book_name} </h3>
+                            <p className="author-name">{bookData.author_name}</p>
+                            <p className="pricing"> {bookData.price} &#8376;</p>
+                        </div>
+                        <div className="card-button-container">
+                        <Link to={`/book-details/${bookData.id}`} className="product-listing-button">Add to Cart</Link>
                         </div>
                     </div>
                 </div>
