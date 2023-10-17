@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from '../../components/layouts/navbar/Navbar';
 import SearchInputForm from '../../components/form/searchinputform/SearchInputForm';
 import './booksPage.styles.css';
-import ProductListingAll from "../../components/layouts/productlistingall/ProductListingAll";
+import ProductListingAll from "../../components/layouts/product-listing-all/ProductListingAll";
 import Footer from '../../components/layouts/footer/footer';
 
 const BooksPage=()=>{
