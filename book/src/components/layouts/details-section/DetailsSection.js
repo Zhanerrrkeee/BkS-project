@@ -19,7 +19,7 @@ const DetailsSection=()=>{
                         <p><b>Book Length</b>: 300 pages</p>
                         <h3>2500&#8376;</h3>
 
-                        <a href="#" className='cart-button'>Add To Cart</a>
+                        <a href="#" className='button-primary'>Add To Cart</a>
                     </div>
                 </div>
             </div>
