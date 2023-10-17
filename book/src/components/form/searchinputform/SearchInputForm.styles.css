@@ -5,6 +5,8 @@
     border-radius: 5px;
     margin-top: 20px;
     box-shadow: 4px 4px 15px #111;
+
+    
 }
 
 .search-input{
@@ -26,4 +28,11 @@
 
 .search-button:hover{
     background-color: var(--primary-color-bright);
+}
+.dark-box-shadow{
+    box-shadow: 4px 4px 15px #111;
+}
+
+.light-box-shadow{
+    box-shadow: 4px 4px 15px #ccc;
 }
