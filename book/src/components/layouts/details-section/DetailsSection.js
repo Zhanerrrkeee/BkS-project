@@ -1,9 +1,19 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import './detailsSection.styles.css';
 import BookDetailImg from '../../../assets/books-images/dor.jpg'
+import { useParams } from 'react-router-dom';
+import { BookData } from '../../../mockData';
 
+const DetailsSection = () => {
+    const { id } = useParams();
+    const [bookData, setBookData] = useState({}); // Use square brackets for destructuring
 
-const DetailsSection=()=>{
+    useEffect(() => {
+        let newData = BookData.filter((book) => book.id === parseInt(id));
+
+        console.log(newData);
+        setBookData(newData[0]);
+    }, [id]);
     return (
         <section className='detail-section-container'>
             <div className='container'>
@@ -12,12 +22,12 @@ const DetailsSection=()=>{
                         <img  src={BookDetailImg} alt="book" />
                     </div>
                     <div className='book-detail-container'>
-                        <h2>BookName</h2>
-                        <p className='text-primary'>Author Name</p>
-                        <p className='book-description'>Book Description</p>
-                        <p><b>Language</b>: English</p>
-                        <p><b>Book Length</b>: 300 pages</p>
-                        <h3>2500&#8376;</h3>
+                        <h2>{bookData.book_name}</h2>
+                        <p className='text-primary'>{bookData.author_name}</p>
+                        <p className='book-description'>{bookData.book_description}</p>
+                        <p><b>{bookData.language}</b>: English</p>
+                        <p><b>{bookData.print_length}</b>: 300 pages</p>
+                        <h3>{bookData.price}&#8376;</h3>
 
                         <a href="#" className='button-primary'>Add To Cart</a>
                     </div>

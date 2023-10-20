@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 
 
 const ProductListingCard=({BookData})=>{
-    console.log(BookData);
     return(
         <div className="listing-container">
                     <div className="product-listing-card">
