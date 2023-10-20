@@ -2,7 +2,7 @@ import React from 'react';
 import './Signup.styles.css';
 import AuthBgImg from '../../assets/auth-bg.jpg';
 import Navbar from '../../components/layouts/navbar/Navbar';
-import AuthForm from '../../components/form/authForm/AuthForm';
+import AuthForm from '../../components/form/searchinputform/authForm/AuthForm';
 
 const Signup = () =>{
     return(

@@ -2,7 +2,7 @@ import React from "react";
 import './ProductListingCard.styles.css';
 import ProductImage from '../../../assets/books-images/dor.jpg';
 import SearchInputForm from "../../form/searchinputform/SearchInputForm";
-import { BookData } from "../../../mockData";
+import  BookData  from '../../../mockData.js';
 import { Link } from "react-router-dom";
 
 
