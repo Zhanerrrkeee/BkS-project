@@ -1,4 +1,4 @@
-const BookData=[
+const BookData = [
     {
         "id":1,
         "book_name":"Призрак Оперы",

@@ -1,13 +1,13 @@
 import React from "react";
 import './ProductListingCard.styles.css';
 import ProductImage from '../../../assets/books-images/dor.jpg';
-import SearchInputForm from "../../form/searchinputform/SearchInputForm";
-import  BookData  from '../../../mockData.js';
+// import SearchInputForm from "../../form/searchinputform/SearchInputForm";
+import { BookData } from "../../../mockData";
 import { Link } from "react-router-dom";
 
 
-const ProductListingCard=({bookData})=>{
-    console.log(bookData);
+const ProductListingCard=({BookData})=>{
+    console.log(BookData);
     return(
         <div className="listing-container">
                     <div className="product-listing-card">
@@ -15,12 +15,12 @@ const ProductListingCard=({bookData})=>{
                             <img src={ProductImage} alt="product-listing-img" className="product-listing-img" /> 
                         </div>
                         <div className="product-listing-details-container">
-                            <h3>{bookData.book_name} </h3>
-                            <p className="author-name">{bookData.author_name}</p>
-                            <p className="pricing"> {bookData.price} &#8376;</p>
+                            <h3>{BookData.book_name} </h3>
+                            <p className="author-name">{BookData.author_name}</p>
+                            <p className="pricing"> {BookData.price} &#8376;</p>
                         </div>
                         <div className="card-button-container">
-                        <Link to={`/book-details/${bookData.id}`} className="product-listing-button">Add to Cart</Link>
+                        <Link to={`/book-details/${BookData.id}`} className="product-listing-button">Add to Cart</Link>
                         </div>
                     </div>
                 </div>
