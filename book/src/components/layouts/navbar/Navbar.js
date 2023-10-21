@@ -13,7 +13,7 @@ const Navbar=({ darkTheme, darkText})=>{
                     <Link to="/" className={`${darkText ?'nav-links-dark':'nav-links'}`}>Home</Link>
                     <Link to="/books" className={`${darkText ?'nav-links-dark':'nav-links'}`}>Books</Link>
                     <Link to="/login" className={`${darkText ?'nav-links-dark':'nav-links'}`}>Log In</Link>
-                    <Link to="/singup" className={`${darkText ?'nav-links-dark':'nav-links'}`}>Sign Sup</Link>
+                    <Link to="/signup" className={`${darkText ?'nav-links-dark':'nav-links'}`}>Sign Sup</Link>
                 </nav>
             </div>
         </section>

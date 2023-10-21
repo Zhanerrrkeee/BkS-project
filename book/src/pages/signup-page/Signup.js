@@ -8,6 +8,7 @@ const Signup = () =>{
     return(
       <React.Fragment>
         <Navbar  darkText={true}/>
+        
         <section className="signup-container">
             <div className='signup-img-container'>
                 <img src={AuthBgImg} alt='authentication-background'/>

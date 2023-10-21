@@ -2,11 +2,12 @@ import React from 'react';
 import AuthBgImg from '../../assets/auth-bg.jpg';
 import Navbar from '../../components/layouts/navbar/Navbar';
 import AuthForm from '../../components/form/searchinputform/authForm/AuthForm';
-
+import './Login.styles.css';
 const Login = () =>{
     return(
       <React.Fragment>
         <Navbar  darkText={true}/>
+
         <section className="Login-container">
             <div className='Login-img-container'>
                 <img src={AuthBgImg} alt='authentication-background'/>
