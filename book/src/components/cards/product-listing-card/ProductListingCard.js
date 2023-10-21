@@ -11,7 +11,7 @@ const ProductListingCard=({BookData})=>{
         <div className="listing-container">
                     <div className="product-listing-card">
                         <div className="product-listing-img-container">
-                            <img src={ProductImage} alt="product-listing-img" className="product-listing-img" /> 
+                            <img src={BookData.book_url} alt="product-listing-img" className="product-listing-img" /> 
                         </div>
                         <div className="product-listing-details-container">
                             <h3>{BookData.book_name} </h3>
