@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import './detailsSection.styles.css';
-import BookDetailImg from '../../../assets/books-images/dor.jpg'
 import { useParams } from 'react-router-dom';
 import { BookData } from '../../../mockData';
 
@@ -19,7 +18,7 @@ const DetailsSection = () => {
             <div className='container'>
                 <div className='flex-container'>
                     <div className='book-img-container'>
-                        <img  src={BookDetailImg} alt="book" />
+                        <img  src={bookData.book_url} alt="book" />
                     </div>
                     <div className='book-detail-container'>
                         <h2>{bookData.book_name}</h2>

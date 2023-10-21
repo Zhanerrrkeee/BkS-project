@@ -7,7 +7,7 @@ const SearchResultCard = ({BookData}) => {
     return(
         <section className="cart-item">
             <div className="cart-item-img-container">
-                <img src="" alt="cart-item-img" className="cart-item-img"/>
+                <img src={BookData.book_url} alt="cart-item-img" className="cart-item-img"/>
             </div>
             <div className="cart-item-container">
                 <h2>{BookData.book_name}</h2>
