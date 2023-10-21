@@ -5,6 +5,8 @@ import BooksPage from "./pages/bookspage/BooksPage";
 import BookDetails from "./pages/bookdetailpage/BookDetails";
 import Login from "./pages/loginpage/Login";
 import Signup from "./pages/signup-page/Signup";
+import SearchPage from "./pages/SearchPage/SearchPage";
+
 const App=()=>{
     return(
         <div>
@@ -12,6 +14,7 @@ const App=()=>{
                  <Route path="/" element={<HomePage/>}/>
                  <Route path="/books" element={<BooksPage/>}/>
                  <Route path="/book-details/:id" element={<BookDetails/>}/> 
+                 <Route path="/search" element={<SearchPage/>}/>
                  <Route path="/signup" element={<Signup/>}/> 
                  <Route path="/login" element={<Login/>}/> 
             </Routes>
