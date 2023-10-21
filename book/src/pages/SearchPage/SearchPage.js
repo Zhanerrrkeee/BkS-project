@@ -1,18 +1,20 @@
-import React, {useEffect} from "react";
+import React, {useState, useEffect} from "react";
 import Navbar from "../../components/layouts/navbar/Navbar";
 import Footer from "../../components/layouts/footer/footer";
 import { useLocation } from "react-router-dom";
 import { BookData } from '../../mockData'; 
+import SearchResultCard from "../../components/cards/search-result-card/SearchResultCard";
+
 
 const SearchPage = () =>{
     const location = useLocation();
-
+    const [searchResult, setSearchResult]=useState([]);
     useEffect(()=>{
         let searchValue = [];
 
         searchValue= BookData.filter((data)=> data.book_name.toLowerCase().includes(location.state.toLowerCase()));
 
-        console.log(searchValue);
+        setSearchResult(searchValue);
     },[])
     return (
         <section>
@@ -20,6 +22,9 @@ const SearchPage = () =>{
             <div className="search-result-container">
                 <div className="container">
                         <h2>Your Search Result</h2>
+                        {searchResult.map((result)=>(
+                            <SearchResultCard BookData={result}/>
+                        ))}
                 </div>
             </div>
             

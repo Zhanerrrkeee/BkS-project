@@ -1,17 +1,19 @@
 import React,{useContext} from "react";
 import './SearchResultCard.styles.css';
+import { Link } from "react-router-dom";
+import { BookData } from "../../../mockData";
 
-
-const SearchResultCard = ({}) => {
+const SearchResultCard = ({BookData}) => {
     return(
-        <section className="">
-            <div className="">
-                <img src="" alt="" className=""/>
+        <section className="cart-item">
+            <div className="cart-item-img-container">
+                <img src="" alt="cart-item-img" className="cart-item-img"/>
             </div>
-            <div className="">
-                <h2></h2>
-                <p></p>
-                <h3></h3>
+            <div className="cart-item-container">
+                <h2>{BookData.book_name}</h2>
+                <p>{BookData.author_name}</p>
+                
+                <Link to={`/book-details/${BookData.id}`} className="button-primary">Product Details</Link>
             </div>
         </section>
     )
