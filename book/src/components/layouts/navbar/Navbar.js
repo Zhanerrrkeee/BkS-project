@@ -1,6 +1,7 @@
 import React from "react";
 import './navbar.styles.css';
 import { Link } from 'react-router-dom';
+import {ReactComponent as Cart} from '../../../assets/cart.svg';
 
 const Navbar=({ darkTheme, darkText})=>{
     
@@ -13,8 +14,11 @@ const Navbar=({ darkTheme, darkText})=>{
                     <Link to="/" className={`${darkText ?'nav-links-dark':'nav-links'}`}>Home</Link>
                     <Link to="/books" className={`${darkText ?'nav-links-dark':'nav-links'}`}>Books</Link>
                     <Link to="/login" className={`${darkText ?'nav-links-dark':'nav-links'}`}>Log In</Link>
-                    <Link to="/signup" className={`${darkText ?'nav-links-dark':'nav-links'}`}>Sign Sup</Link>
+                    <Link to="/signup" className={`${darkText ?'nav-links-dark':'nav-links'}`}>Sign up</Link>
+                    <Link to="/cart" className="cartLink"><Cart/></Link>
+                    
                 </nav>
+                
             </div>
         </section>
     )

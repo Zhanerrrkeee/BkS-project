@@ -1,6 +1,6 @@
 import React from "react";
 
-const AuthForm = () => {
+const AuthForm = ({buttonName}) => {
       return(
         <form>
         <div className='form-group'>
@@ -14,7 +14,7 @@ const AuthForm = () => {
         </div>
 
         <div className='form-group'>
-            <input type='submit' className='button-primary' value="Login" />
+            <input type='submit' className='button-primary' value={buttonName} />
         </div>
     </form>
       )

@@ -6,6 +6,8 @@ import BookDetails from "./pages/bookdetailpage/BookDetails";
 import Login from "./pages/loginpage/Login";
 import Signup from "./pages/signup-page/Signup";
 import SearchPage from "./pages/SearchPage/SearchPage";
+import CartPage from "./pages/cartpage/CartPage";
+
 
 const App=()=>{
     return(
@@ -17,6 +19,8 @@ const App=()=>{
                  <Route path="/search" element={<SearchPage/>}/>
                  <Route path="/signup" element={<Signup/>}/> 
                  <Route path="/login" element={<Login/>}/> 
+                 <Route path="/cart" element={<CartPage/>}/> 
+                 
             </Routes>
         
         </div>

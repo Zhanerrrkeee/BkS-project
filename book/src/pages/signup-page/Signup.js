@@ -22,7 +22,7 @@ const Signup = () =>{
                   <h2>Signup</h2>
                   <p> Create a new account with email and password</p>
 
-                    <AuthForm/>
+                    <AuthForm buttonName="Sign Up"/>
                 </div>
                 </div>
                
