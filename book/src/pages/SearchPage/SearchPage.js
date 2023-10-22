@@ -22,9 +22,13 @@ const SearchPage = () =>{
             <div className="search-result-container">
                 <div className="container">
                         <h2>Your Search Result</h2>
-                        {searchResult.map((result)=>(
-                            <SearchResultCard BookData={result}/>
-                        ))}
+                        {searchResult.length === 0 ? (
+                        <p>OOPS! There is no such kind of book...</p>
+                    ) : (
+                        searchResult.map((result, index) => (
+                            <SearchResultCard key={index} BookData={result} />
+                        ))
+                    )}
                 </div>
             </div>
             

@@ -25,7 +25,7 @@ const DetailsSection = () => {
                         <p className='text-primary'>{bookData.author_name}</p>
                         <p className='book-description'>{bookData.book_description}</p>
                         <p><b>{bookData.language}</b>: English</p>
-                        <p><b>{bookData.print_length}</b>: 300 pages</p>
+                        <p><b>Length</b>: {bookData.print_length}</p>
                         <h3>{bookData.price}&#8376;</h3>
 
                         <a href="#" className='button-primary'>Add To Cart</a>
