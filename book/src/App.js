@@ -1,5 +1,7 @@
-import React from "react";
+import React,{useState, useEffect, createContext} from "react";
 import {Routes, Route} from 'react-router-dom';
+import app from "./firebase/Firebase";
+import {getAuth, onAuthStateChanged} from 'firebase/auth';
 import HomePage from "./pages/homepage/HomePage";
 import BooksPage from "./pages/bookspage/BooksPage";
 import BookDetails from "./pages/bookdetailpage/BookDetails";
@@ -8,10 +10,29 @@ import Signup from "./pages/signup-page/Signup";
 import SearchPage from "./pages/SearchPage/SearchPage";
 import CartPage from "./pages/cartpage/CartPage";
 
+export const UserContext=createContext({});
 
 const App=()=>{
+    const auth=getAuth(app);
+    const [authenticatedUser, setAuthenticatedUser]=useState(null);
+
+    console.log(UserContext);
+
+    useEffect(()=>{
+        onAuthStateChanged(auth,(user)=>{
+            if(user){
+              
+                setAuthenticatedUser(user);
+
+            }
+            else{
+                setAuthenticatedUser(null)
+            }
+        })
+
+    }, [])
     return(
-        <div>
+        <UserContext.Provider value={authenticatedUser}>
             <Routes>
                  <Route path="/" element={<HomePage/>}/>
                  <Route path="/books" element={<BooksPage/>}/>
@@ -23,7 +44,7 @@ const App=()=>{
                  
             </Routes>
         
-        </div>
+        </UserContext.Provider>
     )
 }
 
