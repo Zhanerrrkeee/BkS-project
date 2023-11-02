@@ -1,7 +1,7 @@
 import React,{useState, useEffect, createContext} from "react";
 import {Routes, Route} from 'react-router-dom';
 import app from "./firebase/Firebase";
-import {getAuth, onAuthStateChanged} from 'firebase/auth';
+import {RecaptchaVerifier, getAuth, onAuthStateChanged} from 'firebase/auth';
 import HomePage from "./pages/homepage/HomePage";
 import BooksPage from "./pages/bookspage/BooksPage";
 import BookDetails from "./pages/bookdetailpage/BookDetails";
@@ -49,3 +49,6 @@ const App=()=>{
 }
 
 export default App;
+
+// ReadableStreamDefaultController
+// RecaptchaVerifier
