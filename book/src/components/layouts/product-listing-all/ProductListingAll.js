@@ -5,7 +5,7 @@ import ProductListingCard from '../../cards/product-listing-card/ProductListingC
 import {BookData} from '../../../mockData';
 
 const ProductListingAll=()=>{
-    console.log(BookData);
+    // console.log(BookData);
     return (
         <section className="product-listing-all-container">
             <div className="container">

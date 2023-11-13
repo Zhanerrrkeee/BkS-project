@@ -11,28 +11,32 @@ import SearchPage from "./pages/SearchPage/SearchPage";
 import CartPage from "./pages/cartpage/CartPage";
 
 export const UserContext=createContext({});
+export const CartContext=createContext([]);
 
 const App=()=>{
     const auth=getAuth(app);
     const [authenticatedUser, setAuthenticatedUser]=useState(null);
-
+    const [cartItems, setCartItems]=useState([]);
     console.log(UserContext);
 
     useEffect(()=>{
         onAuthStateChanged(auth,(user)=>{
             if(user){
-              
                 setAuthenticatedUser(user);
-
-            }
+             }
             else{
                 setAuthenticatedUser(null)
             }
         })
 
     }, [])
+
+    useEffect(()=>{
+        console.log(cartItems);
+    }, [cartItems])
     return(
         <UserContext.Provider value={authenticatedUser}>
+            <CartContext.Provider value={{cartItems, setCartItems}}>
             <Routes>
                  <Route path="/" element={<HomePage/>}/>
                  <Route path="/books" element={<BooksPage/>}/>
@@ -43,6 +47,9 @@ const App=()=>{
                  <Route path="/cart" element={<CartPage/>}/> 
                  
             </Routes>
+
+            </CartContext.Provider>
+            
         
         </UserContext.Provider>
     )

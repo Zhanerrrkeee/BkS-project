@@ -1,18 +1,39 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import './detailsSection.styles.css';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { BookData } from '../../../mockData';
+import { CartContext, UserContext } from '../../../App'; 
+//useContext is in order to get user data
 
 const DetailsSection = () => {
     const { id } = useParams();
     const [bookData, setBookData] = useState({}); // Use square brackets for destructuring
+
+
+    const user=useContext(UserContext);
+    const {cartItems,setCartItems}=useContext(CartContext);
+    const navigate=useNavigate();
+
 
     useEffect(() => {
         let newData = BookData.filter((book) => book.id === parseInt(id));
 
         console.log(newData);
         setBookData(newData[0]);
-    }, [id]);
+    }, [id])
+
+    const handleAddToCart=()=>{
+        if(user){
+            // //add to cart
+            setCartItems([...cartItems,bookData]);
+            // alert( 'The book $bookData.book_name is added to the cart');
+        }else{
+            navigate('/login');
+            alert("Please Login or Sign Up first");
+
+        }
+    }
+
     return (
         <section className='detail-section-container'>
             <div className='container'>
@@ -28,7 +49,7 @@ const DetailsSection = () => {
                         <p><b>Length</b>: {bookData.print_length}</p>
                         <h3>{bookData.price}&#8376;</h3>
 
-                        <a href="#" className='button-primary'>Add To Cart</a>
+                        <a onClick={handleAddToCart}  className='button-primary'>Add To Cart</a>
                     </div>
                 </div>
             </div>
