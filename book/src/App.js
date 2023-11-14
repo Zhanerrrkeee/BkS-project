@@ -9,6 +9,7 @@ import Login from "./pages/loginpage/Login";
 import Signup from "./pages/signup-page/Signup";
 import SearchPage from "./pages/SearchPage/SearchPage";
 import CartPage from "./pages/cartpage/CartPage";
+import ScrollToTop from "./components/util/ScrollToTop";
 
 export const UserContext=createContext({});
 export const CartContext=createContext([]);
@@ -43,7 +44,8 @@ const App=()=>{
     }, [cartItems])
 
     return(
-        <UserContext.Provider value={authenticatedUser}>
+        <ScrollToTop>
+            <UserContext.Provider value={authenticatedUser}>
             <CartContext.Provider value={{cartItems,totalAmount, setCartItems}}>
             <Routes>
                  <Route path="/" element={<HomePage/>}/>
@@ -60,6 +62,7 @@ const App=()=>{
             
         
         </UserContext.Provider>
+        </ScrollToTop>
     )
 }
 

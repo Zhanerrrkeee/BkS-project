@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import Navbar from "../../components/layouts/navbar/Navbar";
-import Footer from "../../components/layouts/footer/footer";
+import Footer from "../../components/layouts/footer/Footer";
 import { useLocation } from "react-router-dom";
 import { BookData } from '../../mockData'; 
 import SearchResultCard from "../../components/cards/search-result-card/SearchResultCard";
