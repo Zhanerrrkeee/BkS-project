@@ -1,5 +1,5 @@
 import React from 'react';
-import './footer.styles.css';
+import './Footer.styles.css';
 import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
