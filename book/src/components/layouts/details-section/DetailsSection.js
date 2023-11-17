@@ -44,8 +44,9 @@ const DetailsSection = () => {
                     <div className='book-detail-container'>
                         <h2>{bookData.book_name}</h2>
                         <p className='text-primary'>{bookData.author_name}</p>
+                        <p><b>Жанр</b>: {bookData.book_genre}</p>
                         <p className='book-description'>{bookData.book_description}</p>
-                        <p><b>{bookData.language}</b>: English</p>
+                        <p><b>Language</b>: {bookData.language}</p>
                         <p><b>Length</b>: {bookData.print_length}</p>
                         <h3>{bookData.price}&#8376;</h3>
 
