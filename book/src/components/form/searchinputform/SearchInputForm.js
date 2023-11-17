@@ -1,29 +1,79 @@
-import React, {useState}from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import './SearchInputForm.styles.css';
+import "./SearchInputForm.styles.css";
 
 const SearchInputForm = ({ darkTheme }) => {
-    const [searchField, setSearchField] = useState('');
-    const navigate = useNavigate();
+  const [searchField, setSearchField] = useState("");
+  const [sortOrder, setSortOrder] = useState("asc");
+  const [filterGenre, setFilterGenre] = useState("all");
+  const [maxPrice, setMaxPrice] = useState("");
+  const navigate = useNavigate();
 
-    const handleChange = (e) =>{
-        setSearchField(e.target.value);
-    }
+  const handleChange = (e) => {
+    setSearchField(e.target.value);
+  };
 
-    const redirectToSearch = () =>{
-        navigate('/search', {state:searchField});
-    }
-    return (
-        <div className={`search-input-form-container ${darkTheme ? 'dark-box-shadow' : 'light-box-shadow'}`}>
-            <input 
-            type="text" 
-            className="search-input" 
-            placeholder="Search Books" 
-            value = {searchField}
-            onChange={handleChange}/>
-            <button onClick={redirectToSearch} className="search-button">Search</button>
-        </div>
-    );
-}
+  const handleSortOrderChange = (e) => {
+    setSortOrder(e.target.value);
+  };
+
+  const handleGenreChange = (e) => {
+    setFilterGenre(e.target.value);
+  };
+
+  const handleMaxPriceChange = (e) => {
+    setMaxPrice(e.target.value);
+  };
+
+  const handleSearch = () => {
+    const searchOptions = {
+      state: searchField,
+      sortOrder,
+      filterGenre,
+      maxPrice,
+    };
+
+    navigate("/search", { state: searchOptions });
+  };
+
+  return (
+    <div
+      className={`search-input-form-container ${
+        darkTheme ? "dark-box-shadow" : "light-box-shadow"
+      }`}
+    >
+      <input
+        type="text"
+        className="search-input"
+        placeholder="Search Books"
+        value={searchField}
+        onChange={handleChange}
+      />
+      <label>
+        Sort Order:
+        <select value={sortOrder} onChange={handleSortOrderChange}>
+          <option value="asc">Ascending</option>
+          <option value="desc">Descending</option>
+        </select>
+      </label>
+      <label>
+        Filter by Genre:
+        <select value={filterGenre} onChange={handleGenreChange}>
+          <option value="all">All Genres</option>
+          <option value="Классика">Классика</option>
+          <option value="Роман">Роман</option>
+          {/* Add more genres based on your data */}
+        </select>
+      </label>
+      <label>
+        Max Price:
+        <input type="number" value={maxPrice} onChange={handleMaxPriceChange} />
+      </label>
+      <button onClick={handleSearch} className="search-button">
+        Search
+      </button>
+    </div>
+  );
+};
 
 export default SearchInputForm;
