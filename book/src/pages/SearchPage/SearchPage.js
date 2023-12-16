@@ -11,41 +11,42 @@ const SearchPage = () => {
 
   useEffect(() => {
     let filteredData = [...BookData];
-
+  
     if (location.state) {
       const { state: searchOptions } = location;
-
+  
       // Apply search query
       if (searchOptions.state) {
         const searchQuery = searchOptions.state.toLowerCase();
         filteredData = filteredData.filter((data) =>
-          data.book_name.toLowerCase().includes(searchQuery)
+          data.book_name.toLowerCase().charAt(0) === searchQuery
         );
       }
-
+  
       // Apply sorting
       if (searchOptions.sortOrder === "asc") {
         filteredData.sort((a, b) => a.book_name.localeCompare(b.book_name));
       } else if (searchOptions.sortOrder === "desc") {
         filteredData.sort((a, b) => b.book_name.localeCompare(a.book_name));
       }
-
+  
       // Apply genre filtering
       if (searchOptions.filterGenre !== "all") {
         filteredData = filteredData.filter(
-          (data) => data.genre === searchOptions.filterGenre
+          (data) => data.book_genre === searchOptions.filterGenre
         );
       }
-
+  
       // Apply max price filtering
       if (searchOptions.maxPrice) {
         const maxPrice = parseInt(searchOptions.maxPrice);
         filteredData = filteredData.filter((data) => data.price <= maxPrice);
       }
     }
-
+  
     setSearchResult(filteredData);
-  }, [location.state]);
+  }, [location.state, location]);
+  
 
   return (
     <section>

@@ -40,8 +40,7 @@ const SearchInputForm = ({ darkTheme }) => {
     <div
       className={`search-input-form-container ${
         darkTheme ? "dark-box-shadow" : "light-box-shadow"
-      }`}
-    >
+      }`}>
       <input
         type="text"
         className="search-input"
@@ -60,9 +59,16 @@ const SearchInputForm = ({ darkTheme }) => {
         Filter by Genre:
         <select value={filterGenre} onChange={handleGenreChange}>
           <option value="all">All Genres</option>
-          <option value="Классика">Классика</option>
-          <option value="Роман">Роман</option>
-          {/* Add more genres based on your data */}
+          <option value="Детская литература">Детская литература</option>
+          <option value="Для родителей">Для родителей</option>
+          <option value="Мировая классика">Мировая классика</option>
+          <option value="Научпоп">Научпоп</option>
+          <option value="Поэзия">Поэзия</option>
+          <option value="Психология">Психология</option>
+          <option value="Сентиментальный роман">Сентиментальный роман</option>
+          <option value="Современная мировая проза">Современная мировая проза</option>
+          <option value="Фантастика">Фантастика</option>
+          <option value="Энциклопедия">Энциклопедия</option>
         </select>
       </label>
       <label>
