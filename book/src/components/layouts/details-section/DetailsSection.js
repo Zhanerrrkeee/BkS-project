@@ -25,8 +25,8 @@ const DetailsSection = () => {
     const handleAddToCart=()=>{
         if(user){
             // //add to cart
-            setCartItems([...cartItems,bookData]);
-            // alert( 'The book $bookData.book_name is added to the cart');
+            setCartItems([...cartItems, bookData]);
+            window.alert(`The book "${bookData.book_name}" is added to the cart`);
         }else{
             navigate('/login');
             alert("Please Login or Sign Up first");
