@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from '../../components/layouts/navbar/Navbar';
 import DetailsSection from "../../components/layouts/details-section/DetailsSection";
 import Footer from '../../components/layouts/footer/Footer';
+import Comment from '../../components/comment/comment';
 
 const BookDetails=()=>{
     return(
@@ -9,6 +10,7 @@ const BookDetails=()=>{
             <Navbar darkTheme={true}/>
 
             <DetailsSection />
+            <Comment/>
             <Footer/>
         </div>
     )
