@@ -14,5 +14,7 @@ Main features:
 6. Feedbacks:
     a)Comments: user can leave their feedbacks and ratings in books' details.
     b)Questions: if user have questions or problem, he can leave message for website organizators  to receive a quick response.
-Getting Started
+
+
+    Getting Started
 To get started with Bookstore, simply visit our website at [www.bookstore.com](http://u158640.test-handyhost.ru/) and create a new account, make purchases. Happy reading!
