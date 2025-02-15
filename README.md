@@ -11,7 +11,7 @@ Git
 
 🔧 Installation
 Clone the repository:
-git clone https://github.com/your-repo-link.git
+https://github.com/Zhanerrrkeee/BkS-project.git
 cd your-project-folder
 
 Install dependencies:
